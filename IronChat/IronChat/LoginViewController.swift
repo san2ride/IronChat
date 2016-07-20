@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.signOutUser()
+        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -47,7 +47,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 self.signInUser(email, password: password)
                 
-                self.performSegueWithIdentifier("LoginSegue", sender: nil)
             }
         }
         
@@ -61,7 +60,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signOutButtonTapped(sender: UIButton) {
         
-        
+        self.signOutUser()
     }
     
     func deniedAlert() {
@@ -95,6 +94,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if let user = user {
                 print("\(user.email) sighned in!")
             }
+            
+            self.performSegueWithIdentifier("LoginSegue", sender: nil)
         }
     }
 
