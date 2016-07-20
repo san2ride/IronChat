@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  IronChat
 //
 //  Created by don't touch me on 7/19/16.
@@ -9,8 +9,8 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController, UITextFieldDelegate {
-    
+class LoginViewController: UIViewController, UITextFieldDelegate {
+        
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
@@ -19,17 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let user = FIRAuth.auth()?.currentUser {
-            print("am sighned in\(user)")
-            
-            self.signOutUser()
-            
-        } else {
-            print("not sighned in")
-        
-            self.signInUser("j.sanchezrides@gmail.com", password: "123456")
-        }
-        
+        self.signOutUser()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -67,8 +57,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.performSegueWithIdentifier("RegisterSegue", sender: nil)
         
+    }
+    
+    @IBAction func signOutButtonTapped(sender: UIButton) {
+        
         
     }
+    
+    func deniedAlert() {
+        let alert = UIAlertController(title: "Invalid Login", message: "", preferredStyle: .Alert)
+        
+            let cancelAction = UIAlertAction(title: "Denied",
+                                             style: .Default) {
+                                                (action) in
+        }
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
         
     func signOutUser() {
             
@@ -82,6 +88,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             if error != nil {
                 print(error?.localizedDescription)
+                
+                self.deniedAlert()
             }
             
             if let user = user {

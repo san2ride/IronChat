@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginView Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IronChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="LoginView Controller" customClass="LoginViewController" customModule="IronChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,6 +43,13 @@
                                     <action selector="registerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="deA-0a-9a2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sd7-EZ-e8Y">
+                                <rect key="frame" x="186" y="354" width="229" height="30"/>
+                                <state key="normal" title="SignOut"/>
+                                <connections>
+                                    <action selector="signOutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YRG-wS-ebt"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBP-Ld-BMb">
                                 <rect key="frame" x="186" y="244" width="229" height="30"/>
                                 <state key="normal" title="logIn"/>
@@ -54,7 +61,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="x3n-g4-oFq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2VW-qM-cy7"/>
+                            <constraint firstItem="Sd7-EZ-e8Y" firstAttribute="top" secondItem="x3n-g4-oFq" secondAttribute="bottom" constant="29" id="DlM-50-xdE"/>
                             <constraint firstItem="WQb-Fs-Jzp" firstAttribute="top" secondItem="Jrd-0e-5HQ" secondAttribute="bottom" constant="14" id="FFV-DJ-0zp"/>
+                            <constraint firstItem="Sd7-EZ-e8Y" firstAttribute="width" secondItem="x3n-g4-oFq" secondAttribute="width" id="FQ0-0a-INx"/>
+                            <constraint firstItem="Sd7-EZ-e8Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LNO-vD-DgT"/>
                             <constraint firstItem="tBP-Ld-BMb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NGT-Qw-Hah"/>
                             <constraint firstItem="WQb-Fs-Jzp" firstAttribute="width" secondItem="Jrd-0e-5HQ" secondAttribute="width" id="Sr3-d3-lKC"/>
                             <constraint firstItem="x3n-g4-oFq" firstAttribute="width" secondItem="tBP-Ld-BMb" secondAttribute="width" id="UE8-mg-R7u"/>
